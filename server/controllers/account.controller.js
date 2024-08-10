@@ -12,7 +12,11 @@ export const createAccount = async (req, res, next) => {
 export const getAccounts = async (req, res, next) => {
   try {
     const accounts = await accountService.getAccountsByUserId(req.user.id);
-    res.json({ accounts });
+    res.json({ 
+      message: "success",
+      accounts 
+    });
+    
   } catch (error) {
     next(error);
   }
